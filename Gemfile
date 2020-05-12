@@ -20,6 +20,7 @@ gem 'puma', '~> 4.1'
 # gem 'image_processing', '~> 1.2'
 
 # add
+gem 'rack-cors'
 
 
 

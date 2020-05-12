@@ -20,7 +20,12 @@ class V1::UsersController < ApplicationController
     user = User.find(params[:id])
     render json: user, adapter: :json_api, status: 200 if user.destroy!
   end
+
   private
+    def user_params
+    params.require(:user).permit(:first_name, :last_name, :email)
+  end
+  
   def record_not_found
     render json: { message: 'Record Not Found!'}, adapter: :json_api, status: 404
   end
